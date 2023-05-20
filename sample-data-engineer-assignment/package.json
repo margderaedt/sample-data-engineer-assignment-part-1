@@ -1,0 +1,13 @@
+{
+  "name": "sample-data-engineer-assignment",
+  "version": "1.0.0",
+  "description": "Fetches data from the NYT developer APIs and transforms it into a CSV",
+  "author": "Margeaux DeRaedt",
+  "license": "MIT",
+  "scripts": {
+    "invoke": "sls invoke local -f export --stage prod"
+  },
+  "dependencies": {
+    "serverless-python-requirements": "*"
+  }
+}

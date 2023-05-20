@@ -1,0 +1,24 @@
+service: sample-data-engineer-assignment
+
+plugins:
+  - serverless-python-requirements
+provider:
+  name: aws
+  versionFunctions: false
+  runtime: python3.7
+  region: us-east-2 # Ohio
+  timeout: 900 # 15 Minutes
+  environment:
+    # Set the environment:
+    NYT_API_KEY: ${file(.sls_config/config.json):NYT_API_KEY}
+    NYT_API_ENDPOINT: ${file(.sls_config/config.json):NYT_API_ENDPOINT}
+
+custom:
+  pythonRequirements:
+    fileName: requirements.txt
+    dockerizePip: non-linux
+
+functions:
+  export:
+    # This syntax read as [filename].[function name]
+    handler: handler.run
