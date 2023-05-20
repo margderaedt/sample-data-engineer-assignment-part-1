@@ -1,4 +1,3 @@
-import ftplib
 import os
 import requests
 import pandas as pd
@@ -21,7 +20,6 @@ def run(event, context):
         print("Failed to make inital lookup request to Piano: " + str(e))
         return False
     status_response = status_r.json()
-    print("!!!!!!!!!")
 
     article_collection = status_response["response"]["docs"]
 
