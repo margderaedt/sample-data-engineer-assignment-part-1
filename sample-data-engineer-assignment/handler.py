@@ -17,7 +17,7 @@ def run(event, context):
     try:
         status_r = requests.get(f"{nyt_api_endpoint}articlesearch.json?&begin_date={begin_date}&end_date={end_date}&sort=newest&api-key={nyt_api_key}")
     except Exception as e:
-        print("Failed to make inital lookup request to Piano: " + str(e))
+        print("Failed to make inital lookup request to NYT: " + str(e))
         return False
     status_response = status_r.json()
 
